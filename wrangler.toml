@@ -1,0 +1,21 @@
+name = "cloudflare-worker-website-uptime-monitor"
+main = "src/index.js"
+compatibility_date = "2024-04-07"
+workers_dev = true
+node_compat = true
+
+kv_namespaces = [
+  { binding = "your-kv-namespace", id = "123456789000000" }
+]
+
+send_email = [
+    {type = "send_email", name = "EMAIL_BINDING", destination_address = "yourname@gmail.com"},
+]
+
+[vars]
+DISCORD_BOT_TOKEN = ""
+DISCORD_WEBHOOK_URL = ""
+DISCORD_USER_ID = ""
+
+[triggers]
+crons = [ "*/1 * * * *" ]
